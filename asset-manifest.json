@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/todo-app/static/css/main.13dbb54d.chunk.css",
+    "main.js": "/todo-app/static/js/main.255b9cf0.chunk.js",
+    "main.js.map": "/todo-app/static/js/main.255b9cf0.chunk.js.map",
+    "runtime-main.js": "/todo-app/static/js/runtime-main.494b669e.js",
+    "runtime-main.js.map": "/todo-app/static/js/runtime-main.494b669e.js.map",
+    "static/js/2.678630bf.chunk.js": "/todo-app/static/js/2.678630bf.chunk.js",
+    "static/js/2.678630bf.chunk.js.map": "/todo-app/static/js/2.678630bf.chunk.js.map",
+    "static/js/3.bf8a62fe.chunk.js": "/todo-app/static/js/3.bf8a62fe.chunk.js",
+    "static/js/3.bf8a62fe.chunk.js.map": "/todo-app/static/js/3.bf8a62fe.chunk.js.map",
+    "index.html": "/todo-app/index.html",
+    "static/css/main.13dbb54d.chunk.css.map": "/todo-app/static/css/main.13dbb54d.chunk.css.map",
+    "static/js/2.678630bf.chunk.js.LICENSE.txt": "/todo-app/static/js/2.678630bf.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/todo-app/static/media/bg-desktop-dark.73e47dbb.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.494b669e.js",
+    "static/js/2.678630bf.chunk.js",
+    "static/css/main.13dbb54d.chunk.css",
+    "static/js/main.255b9cf0.chunk.js"
+  ]
+}
