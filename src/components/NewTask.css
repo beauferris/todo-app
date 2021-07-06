@@ -14,11 +14,13 @@ form{
 form input, button{
     background: transparent;
     border: none;
-    color: white;
+    color: #C8CBE7;
     outline: none;
 
     font-size: 20px;
 }
+
+
 
 
 form button{

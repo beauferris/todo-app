@@ -1,7 +1,7 @@
 .stats{
 
     display: grid;
-    grid-template-columns: 2fr auto auto auto 2fr;
+    grid-template-columns: 2fr auto  2fr;
     
     background: #25273D;
     box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
@@ -16,21 +16,20 @@
     
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    
+    border-top: #393A4B solid 1px;
 }
 
 
 .clear{
-    margin-right: 10px;
-    justify-self: end;
+    justify-self: center;
     align-self: center;
 }
 
-span{
-    margin-left: 10px;
-    justify-self: start;
+.count{
+    justify-self: center;
     align-self: center;
 }
+
 
 button{
    
@@ -54,5 +53,38 @@ button:hover{
 
 .active:hover{
     color: #3A7CFD;
+}
+
+.filter{
+    align-self: center;
+}
+
+@media (max-width:600px){
+    .stats{
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        grid-template-areas: 
+        "count count clear clear"
+        "buttons buttons buttons buttons";
+        
+        row-gap: 10px;
+
+        border: #393A4B solid 1px;
+
+    }
+
+    .clear{
+        grid-area: clear;
+        justify-self: end;
+        margin-left: 10px;
+    }
+    .count{
+        justify-self: start;
+        grid-area: count;
+        margin-left: 10px;
+    }
+    .filter{
+        grid-area: buttons;
+       justify-self: center;
+    }
 }
 

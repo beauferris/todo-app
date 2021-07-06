@@ -10,7 +10,7 @@ function NewTask(props){
     const [task, setTask] = useState({
         complete:false, 
         key:id,
-        content:" "
+        content:""
     });
 
     const getTask =(event)=> {
@@ -35,7 +35,10 @@ function NewTask(props){
     return(
         <form onSubmit={submitTask}>
            <button type="submit">+</button>
-           <input placeholder="Create a new todo..."  onChange={getTask} value={task.content}/>
+           <input required placeholder='Create a new todo...'
+                  onChange={getTask} 
+                  value={task.content}/>
+                  
         </form>
     )
 }

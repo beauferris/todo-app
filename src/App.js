@@ -17,13 +17,36 @@ function App() {
   const [tasks, setTasks] = useState([{
     key:0,
     content:"Complete online Javascript course",
-    complete:false
+    complete:true
   },
   {
     key:1,
-    content: "frig",
+    content: "Jog around the park 3x",
+    complete:false
+  },
+  {
+    key:3,
+    content: "10 minutes meditation",
+    complete:false
+  },
+  {
+    key:4,
+    content: "Read for 1 hour",
+    complete:false
+  },
+  {
+    key:5,
+    content: "Pick up groceries",
+    complete:false
+  },{
+    key:6,
+    content: "Complete Todo App on Frontend Mentor",
     complete:false
   }
+  
+
+
+
   ]);
 
 
@@ -51,26 +74,37 @@ function App() {
     setTasks(newTodos)
   }
   
-  const taskList = filteredTasks.map(task => {
-    return(<Task 
-      key = {task.key}
-      id={task.key}
-      content={task.content} 
-      checked={task.complete}
-      click={checkHandler}></Task>)
-  }
-  );
 
   const clearCompleted = () =>{
     const newTodos = tasks.filter(task => task.complete === false)
     setTasks(newTodos)
   }
 
+
+  const deleteTask = (event) =>{
+    const newTodos = tasks.filter(task=> task.key !== +event.target.value);
+    console.log(event.target.value)
+    setTasks(newTodos) 
+  }
+
+
+  const taskList = filteredTasks.map(task => {
+    return(<Task 
+      key = {task.key}
+      id={task.key}
+      content={task.content} 
+      checked={task.complete}
+      click={checkHandler}
+      onClick={deleteTask}></Task>)
+  }
+  );
+
+
   return (
     <div className="App">
       <h2>TODO</h2>
       <div className ="app">
-      <NewTask addNewTask={addTask}></NewTask>
+      <NewTask  addNewTask={addTask}></NewTask>
       <div className='tasks'>
         {taskList}
       </div>
