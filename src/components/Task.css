@@ -1,8 +1,6 @@
 .task{
     display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr;
-
+    grid-template-columns: 1fr 50px;
     height: 64px;
     color: white;
 
@@ -39,8 +37,8 @@
     width: 24px;
     height: 24px;
    
-    margin-left: .5em;
-    margin-right: .5em;
+    margin-left: 1em;
+    margin-right: 1em;
     
     border: 0.1px solid #393A4B;
     border-radius: 50%;
@@ -61,12 +59,18 @@
 
 .delete{
     display:none;
+    color:  #494C6B;
 }
 
 .task:hover .delete{
     display: block;
     font-size: 20px;
 }
+
+.task:hover label::before{
+    border: 0.1px solid #55DDFF;
+}
+
 
 @media (max-width:600px){
     .delete{

@@ -4,6 +4,7 @@ import NewTask from './components/NewTask';
 import { useState, useEffect } from 'react';
 
 import Stats from './components/Stats';
+import {ReactSortable} from 'react-sortablejs';
 
 
 function App() {
@@ -12,8 +13,10 @@ function App() {
 
   useEffect(() => {
    getCount()
+
   });
 
+ 
   const [tasks, setTasks] = useState([{
     key:0,
     content:"Complete online Javascript course",
@@ -44,18 +47,32 @@ function App() {
     complete:false
   }
   
-
-
-
   ]);
 
+  useEffect(()=>{
+    filterTasks()
+  },[filter,tasks])
+
+  const [filteredTasks,setFilteredTasks] = useState(tasks)
 
   const changeFilter =(event)=>{
     setFilter(event.target.value);
   }
 
-  let filteredTasks = (filter === "Active"? tasks.filter(task=>task.complete===false)
-    :filter === "Completed" ? tasks.filter(task=>task.complete===true): tasks)
+
+  const filterTasks = () =>{
+    switch(filter){
+      case "Active":
+        setFilteredTasks(tasks.filter(task=>task.complete===false));
+        break;
+      case "Completed":
+        setFilteredTasks(tasks.filter(task=>task.complete===true));
+        break;
+      default:
+        setFilteredTasks(tasks)
+    }
+  }
+
 
   const getCount =()=> {
     const filteredTasks = tasks.filter(task=>task.complete===false)
@@ -71,6 +88,7 @@ function App() {
     const checkedTask = newTodos.find((task,index) =>task.key===+event.target.value)
     const index = (newTodos.indexOf(checkedTask))
     newTodos[index].complete = !newTodos[index].complete;
+    
     setTasks(newTodos)
   }
   
@@ -86,6 +104,9 @@ function App() {
     console.log(event.target.value)
     setTasks(newTodos) 
   }
+
+
+  
 
 
   const taskList = filteredTasks.map(task => {
@@ -106,7 +127,11 @@ function App() {
       <div className ="app">
       <NewTask  addNewTask={addTask}></NewTask>
       <div className='tasks'>
+
+      <ReactSortable list={filteredTasks} setList={setFilteredTasks}> 
         {taskList}
+      </ReactSortable>
+
       </div>
       <Stats filter = {filter} onClick={changeFilter} clear ={clearCompleted} count={count}></Stats>
     </div>

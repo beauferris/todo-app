@@ -5,7 +5,7 @@ import {React, useState} from 'react';
 function NewTask(props){
 
 
-    const [id, setId] = useState(2)
+    const [id, setId] = useState(7)
     
     const [task, setTask] = useState({
         complete:false, 
@@ -34,7 +34,7 @@ function NewTask(props){
 
     return(
         <form onSubmit={submitTask}>
-           <button type="submit">+</button>
+           <button type="submit"></button>
            <input required placeholder='Create a new todo...'
                   onChange={getTask} 
                   value={task.content}/>
