@@ -11,7 +11,7 @@ function Task(props){
             checked={props.checked}
             onChange={props.click}></input>
             
-        <label htmlFor={props.id}> {props.content}</label><br></br>
+        <label htmlFor={props.id}> {props.content}</label>
         </div>
         <button className="delete" value={props.id} onClick={props.onClick}>X</button>
 
@@ -19,4 +19,3 @@ function Task(props){
 }
 
 export default Task;
-

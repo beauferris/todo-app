@@ -5,7 +5,7 @@ import {React, useState} from 'react';
 function NewTask(props){
 
 
-    const [id, setId] = useState(7)
+    const [id, setId] = useState(6)
     
     const [task, setTask] = useState({
         complete:false, 
