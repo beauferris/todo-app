@@ -3,13 +3,8 @@ import './NewTask.css';
 import {React, useState, useEffect} from 'react';
 
 function NewTask(props){
-
-
-
-   
-
     const [id, setId] = useState(
-        localStorage.getItem('idLocal') || 0
+        JSON.parse(localStorage.getItem('idLocal') || 0)
     )
     
     useEffect(() => {
@@ -18,7 +13,7 @@ function NewTask(props){
     
     const [task, setTask] = useState({
         complete:false, 
-        key:id,
+        key: id,
         content:""
     });
 
