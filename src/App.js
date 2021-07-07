@@ -8,7 +8,7 @@ import { ReactSortable } from 'react-sortablejs';
 
 
 function App() {
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(0);
   
   const [filter, setFilter] = useState(
     localStorage.getItem('filterLocal') || 'All'
@@ -23,10 +23,7 @@ function App() {
 
   });
 
-
   const [tasks, setTasks] = useState(
-
-
     JSON.parse(localStorage.getItem('taskLocal')) || []
   );
 
@@ -45,7 +42,6 @@ function App() {
   const changeFilter = (event) => {
     setFilter(event.target.value);
   }
-
 
   const filterTasks = () => {
     switch (filter) {

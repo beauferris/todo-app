@@ -1,11 +1,20 @@
 import './NewTask.css';
 
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 
 function NewTask(props){
 
 
-    const [id, setId] = useState(6)
+
+   
+
+    const [id, setId] = useState(
+        localStorage.getItem('idLocal') || 0
+    )
+    
+    useEffect(() => {
+        localStorage.setItem('idLocal', id);
+      }, [id]);
     
     const [task, setTask] = useState({
         complete:false, 
